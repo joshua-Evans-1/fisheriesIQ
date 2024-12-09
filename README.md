@@ -28,8 +28,13 @@ npm install
 
 ```env
 STATUS=dev
+#Development
+DEV_SERVER=<localhost>
 DEV_PORT=1234
+#Production 
+PROD_SERVER=<server_ip>
 PROD_PORT=5678
+
 HOST=<sql_host>
 USER=<sql_user>
 PASSWORD=<sql_user_pass>

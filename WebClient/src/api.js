@@ -1,6 +1,10 @@
 import Axios from 'axios';
+import dotenv from 'dotenv';
 
-const server = 'http://localhost:4002';
+dotenv.config({ path: '../.env' });
+
+const [SERVER, PORT] = process.env.STATUS === 'prod' ? [process.env.PROD_SERVER, process.env.PROD_PORT] : [process.env.DEV_SERVER, process.env.DEV_PORT];
+const server = `http://${SERVER}:${PORT}`;
 
 export const getSpecies = async () => {
   try {
