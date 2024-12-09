@@ -153,7 +153,6 @@ const TaxonomyTree = () => {
     }
     setSelectedPath(path);
     
-    // Set the selected node name to the clicked node's name
     setSelectedNodeName(nodeData.data.name); 
   };
 

@@ -39,7 +39,7 @@ export default function App() {
         flexDirection: 'column',
         height: '100vh',
         width: '100vw',
-        overflow: 'hidden', // Prevent outer scrolling
+        overflow: 'hidden', 
       }}
     >
       <Router>
@@ -49,7 +49,7 @@ export default function App() {
             top: 0,
             left: 0,
             right: 0,
-            zIndex: 1200, // Ensures it stays above content
+            zIndex: 1200, 
           }}
         />
 

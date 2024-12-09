@@ -1,7 +1,6 @@
 import React from 'react';
 import { Card, CardContent, Typography, Divider, Breadcrumbs, Link, Skeleton } from '@mui/material';
-import { Link as RouterLink } from 'react-router-dom';  // Assuming you're using react-router for navigation
-
+import { Link as RouterLink } from 'react-router-dom'; 
 const ClassificationCard = ({ loading, speciesTaxData }) => (
   <Card>
     <CardContent>

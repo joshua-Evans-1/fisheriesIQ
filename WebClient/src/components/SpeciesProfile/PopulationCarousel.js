@@ -14,12 +14,12 @@ const PopulationCarousel = ({ rows, loading }) => {
     <Box
       sx={{
         padding: 3,
-        overflowX: 'scroll', // Horizontal scrolling for the entire carousel
+        overflowX: 'scroll', 
         overflowY: 'visable',
-        scrollSnapType: 'x mandatory', // Horizontal snapping for rows
+        scrollSnapType: 'x mandatory', 
         display: 'flex',
         flexDirection: 'row',
-        gap: 3, // Space between the cards
+        gap: 3, 
       }}
     >
       {rows.map((row) => {
@@ -38,13 +38,13 @@ const PopulationCarousel = ({ rows, loading }) => {
           <Card
             key={row.WATER_BODY_NAME}
             sx={{
-              minWidth: '80vw', // Set the minimum width of each card
-              maxWidth: '85vw', // Set the maximum width of each card
-              height: 'fit-content', // Adjust height of the card
+              minWidth: '80vw', 
+              maxWidth: '85vw', 
+              height: 'fit-content', 
               display: 'flex',
               flexDirection: 'column',
               textDecoration: 'none',
-              scrollSnapAlign: 'center', // Ensure cards snap into place when scrolling
+              scrollSnapAlign: 'center', 
               '@media (max-width: 600px)': {
                 minWidth: '50vw',
                 height: '50vh',

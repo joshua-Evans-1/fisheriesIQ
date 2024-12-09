@@ -7,7 +7,7 @@ const SpeciesSearch = ({ taxonomyData, setSelectedFilters }) => {
   const [selectedScientificName, setSelectedScientificName] = useState(null);
   const [selectedTaxa, setSelectedTaxa] = useState(null);
 
-  const navigate = useNavigate(); // Use React Router for navigation
+  const navigate = useNavigate(); 
 
   const getUniqueValues = (field) => {
     return [...new Set(taxonomyData.map((row) => row[field]))];

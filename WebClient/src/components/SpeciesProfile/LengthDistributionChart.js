@@ -3,11 +3,11 @@ import { Box } from '@mui/material';
 import { LineChart } from '@mui/x-charts/LineChart';
 
 const LengthDistributionChart = ({ row }) => {
-  const data = row.subRows; // Add chart logic here
+  const data = row.subRows; 
   const lengthDistributionData = _(row.subRows)
-      .groupBy(subRow => new Date(subRow.SURVEY_DATE).getFullYear()) // Group by year
+      .groupBy(subRow => new Date(subRow.SURVEY_DATE).getFullYear()) 
       .map((surveys, year) => ({
-        year: year, // Use the year for x-axis
+        year: year, 
         '0_5_INCHES': _.sumBy(surveys, '0_5_INCHES'),
         '6_7_INCHES': _.sumBy(surveys, '6_7_INCHES'),
         '8_9_INCHES': _.sumBy(surveys, '8_9_INCHES'),
@@ -22,7 +22,7 @@ const LengthDistributionChart = ({ row }) => {
         '45_49_INCHES': _.sumBy(surveys, '45_49_INCHES'),
         '50_PLUS_INCHES': _.sumBy(surveys, '50_PLUS_INCHES')
       }))
-      .sortBy('year') // Sort by year
+      .sortBy('year')
       .value();
   
     return (
@@ -34,8 +34,8 @@ const LengthDistributionChart = ({ row }) => {
             xAxis={[
               {
                 id: 'Year',
-                dataKey: 'year', // Use 'year' for x-axis
-                scaleType: 'point', // Use point scale for discrete years
+                dataKey: 'year', 
+                scaleType: 'point', 
               },
             ]}
             series={[

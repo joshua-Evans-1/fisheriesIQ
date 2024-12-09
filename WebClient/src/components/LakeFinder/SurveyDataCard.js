@@ -10,7 +10,7 @@ const SurveyDataCard = () => {
         <Typography variant="h6" gutterBottom>
           Survey Data
         </Typography>
-        {/* Add survey data rendering logic here */}
+        
       </CardContent>
     </Card>
   );

@@ -18,11 +18,9 @@ const theme = createTheme({
 });
 
 const Navbar = () => {
-  // State for dropdown menus
   const [speciesMenuAnchor, setSpeciesMenuAnchor] = useState(null);
   const [waterbodiesMenuAnchor, setWaterbodiesMenuAnchor] = useState(null);
 
-  // Handlers for species menu
   const handleSpeciesMenuOpen = (event) => {
     setSpeciesMenuAnchor(event.currentTarget);
   };
@@ -31,7 +29,6 @@ const Navbar = () => {
     setSpeciesMenuAnchor(null);
   };
 
-  // Handlers for waterbodies menu
   const handleWaterbodiesMenuOpen = (event) => {
     setWaterbodiesMenuAnchor(event.currentTarget);
   };

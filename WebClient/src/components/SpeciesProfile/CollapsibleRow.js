@@ -8,16 +8,15 @@ import { LineChart } from '@mui/x-charts/LineChart';
 const CollapsibleRow = ({ row }) => {
   const [open, setOpen] = useState(false);
   
-    // Group data by year and sum population, cpue, and weight for the same year
     const populationTrend = _(row.subRows)
-      .groupBy(subRow => new Date(subRow.SURVEY_DATE).getFullYear()) // Group by year
+      .groupBy(subRow => new Date(subRow.SURVEY_DATE).getFullYear()) 
       .map((surveys, year) => ({
-        date: new Date(year, 0, 1), // Create a Date object for January 1st of the year
-        population: _.sumBy(surveys, 'TOTAL_CATCH'), // Sum the total catch for the year
-        cpue: _.meanBy(surveys, 'CATCH_CPUE'), // Average CPUE for the year
-        weight: _.sumBy(surveys, 'WEIGHT'), // Sum the total weight for the year
+        date: new Date(year, 0, 1), 
+        population: _.sumBy(surveys, 'TOTAL_CATCH'), 
+        cpue: _.meanBy(surveys, 'CATCH_CPUE'), 
+        weight: _.sumBy(surveys, 'WEIGHT'), 
       }))
-      .sortBy('date') // Sort by date to ensure correct order
+      .sortBy('date') 
       .value();
   
     const firstSubRow = row.subRows[0];
