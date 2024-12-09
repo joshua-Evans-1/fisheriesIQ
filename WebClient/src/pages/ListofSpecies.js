@@ -32,7 +32,6 @@ const ListofSpecies = () => {
     const fetchSpecies = async () => {
       const data = await getTaxonomyData();
       setSpeciesData(data);
-      console.log(speciesData);
       setLoading(false);
     };
 
@@ -45,9 +44,9 @@ const ListofSpecies = () => {
     <Box
       sx={{
         padding: 2,
-        height: '100vh', // Full viewport height
-        overflowY: 'scroll', // Vertical scrolling
-        scrollSnapType: 'y mandatory', // Enable vertical snapping
+        height: '100vh', 
+        overflowY: 'scroll', 
+        scrollSnapType: 'y mandatory',
       }}
     >
       {loading ? (
@@ -66,7 +65,7 @@ const ListofSpecies = () => {
           <Box
             key={family}
             sx={{
-              scrollSnapAlign: 'start', // Ensure each section snaps to the top
+              scrollSnapAlign: 'start', 
               marginBottom: 4,
             }}
           >
@@ -78,8 +77,8 @@ const ListofSpecies = () => {
             {/* Row for family */}
             <Box
               sx={{
-                overflowX: 'scroll', // Horizontal scrolling for the row
-                scrollSnapType: 'x mandatory', // Horizontal snapping within the row
+                overflowX: 'scroll',
+                scrollSnapType: 'x mandatory', 
                 display: 'flex',
                 flexDirection: 'row',
                 alignItems: 'center',
@@ -102,7 +101,7 @@ const ListofSpecies = () => {
                       display: 'flex',
                       flexDirection: 'column',
                       textDecoration: 'none',
-                      scrollSnapAlign: 'center', // Ensure items snap within the row
+                      scrollSnapAlign: 'center', 
                       '@media (max-width: 600px)': {
                         minWidth: '50vw',
                         height: '40vh',
@@ -116,7 +115,7 @@ const ListofSpecies = () => {
                         src={imagePath}
                         alt={`${species.scientific_name}`}
                         sx={{
-                          height: '60%', // Allocate 60% of card height for image
+                          height: '60%', 
                           objectFit: 'contain',
                         }}
                       />
@@ -128,7 +127,7 @@ const ListofSpecies = () => {
                           flexDirection: 'column',
                           alignItems: 'center',
                           justifyContent: 'center',
-                          height: '40%', // Allocate 40% of card height for text
+                          height: '40%',
                         }}
                       >
                         <Typography variant="h6" component="div">

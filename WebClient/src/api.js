@@ -1,11 +1,8 @@
 import Axios from 'axios';
-import dotenv from 'dotenv';
 
-dotenv.config({ path: '../.env' });
 
-const [SERVER, PORT] = process.env.STATUS === 'prod' ? [process.env.PROD_SERVER, process.env.PROD_PORT] : [process.env.DEV_SERVER, process.env.DEV_PORT];
+const [SERVER, PORT] = process.env.REACT_APP_STATUS === 'prod' ? [process.env.REACT_APP_PROD_SERVER_ADDRESS, process.env.REACT_APP_PROD_SERVER_PORT] : [process.env.REACT_APP_DEV_SERVER_ADDRESS, process.env.REACT_APP_DEV_SERVER_PORT];
 const server = `http://${SERVER}:${PORT}`;
-
 export const getSpecies = async () => {
   try {
     const response = await Axios.get(`${server}/`);

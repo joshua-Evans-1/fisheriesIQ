@@ -16,7 +16,7 @@ import {
 dotenv.config({ path: '../.env' });
 
 const app = express();
-const PORT = process.env.STATUS === 'prod' ? process.env.PROD_PORT : process.env.DEV_PORT;
+const PORT = process.env.REACT_APP_STATUS === 'prod' ? process.env.REACT_APP_PROD_SERVER_PORT : process.env.REACT_APP_DEV_SERVER_PORT;
 
 app.set('view engine', 'ejs');
 app.use(cors());

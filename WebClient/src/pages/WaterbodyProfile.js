@@ -20,8 +20,6 @@ const WaterbodyProfile = () => {
         const data = await getLakeByID(waterBodyId);
         setLakeData(data[0]);
         setSurveyData(data);
-        console.log(data);
-        // Extract unique species with their scientific names
         const speciesMap = {};
       data.forEach((survey) => {
         if (survey.SPECIES_CODE && survey.SCIENTIFIC_NAME) {
@@ -88,9 +86,9 @@ const WaterbodyProfile = () => {
     flexDirection: 'row',
     gap: 2,
     marginBottom: 3,
-    width: '100%', // Ensure the container spans the full width
+    width: '100%',
     '@media (max-width: 600px)': {
-      flexDirection: 'column', // Stack cards vertically on small screens
+      flexDirection: 'column', 
     },
   }}
 >
@@ -156,7 +154,7 @@ const WaterbodyProfile = () => {
       <Box
         sx={{
           padding: 3,
-          overflowX: 'scroll', // Horizontal scrolling
+          overflowX: 'scroll',
           display: 'flex',
           flexDirection: 'row',
           gap: 3,
