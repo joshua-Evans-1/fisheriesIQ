@@ -9,7 +9,6 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import CardActionArea from '@mui/material/CardActionArea';
 
-// Helper function to group species by family
 const groupByFamily = (speciesData) => {
   return speciesData.reduce((acc, species) => {
     if (!acc[species.family]) {

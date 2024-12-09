@@ -20,10 +20,9 @@ const LakeFinder = () => {
     document.title = "LakeFinder - FisheriesIQ";
   }, []);
 
-  // Function to fetch lake data from the API
   const fetchLakeData = async (name) => {
     if (!name.trim()) {
-      setLakeData([]); // Clear lake data when input is empty
+      setLakeData([]); 
       return;
     }
 
@@ -35,10 +34,8 @@ const LakeFinder = () => {
     }
   };
 
-  // Debounced version of the fetch function
   const debouncedFetchLakeData = useCallback(debounce(fetchLakeData, 500), []);
 
-  // Handle input changes and trigger data fetch
   const handleLakeNameChange = (event) => {
     const name = event.target.value;
     setLakeName(name);

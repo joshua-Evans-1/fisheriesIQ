@@ -9,7 +9,6 @@ const TaxaProfile = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  // Taxonomic levels in hierarchical order
   const taxonomyLevels = [
     'kingdom',
     'phylum',
@@ -27,7 +26,6 @@ const TaxaProfile = () => {
       try {
         setLoading(true);
 
-        // Fetch taxonomy data
         const data = await getTaxonomyDataUsingGroup(taxaName, taxaGroup);
         setTaxaDetails(data);
         setError(null);
@@ -42,7 +40,6 @@ const TaxaProfile = () => {
     fetchTaxaDetails();
   }, [taxaGroup, taxaName]);
 
-  // Generate breadcrumbs dynamically
   const generateBreadcrumbs = () => {
     if (!taxaDetails.length) return [];
   
@@ -64,7 +61,6 @@ const TaxaProfile = () => {
 
   const breadcrumbs = generateBreadcrumbs();
 
-  // Get child taxa of the current level
   const getChildTaxa = () => {
     if (!taxaDetails.length) return [];
 
@@ -89,7 +85,7 @@ const TaxaProfile = () => {
       {!loading && !error && taxaDetails.length > 0 && (
       <Typography variant="h5" gutterBottom>
         {
-          taxaDetails[0][`${taxaGroup.toLowerCase()}_desc`] // Fetch the description dynamically
+          taxaDetails[0][`${taxaGroup.toLowerCase()}_desc`] 
         }
       </Typography>
     )}
@@ -129,7 +125,6 @@ const TaxaProfile = () => {
                 const currentIndex = taxonomyLevels.indexOf(taxaGroup.toLowerCase());
                 const childLevel = taxonomyLevels[currentIndex + 1];
 
-                // Find the child's details
                 const childTaxonDetails = taxaDetails.find(
                   (taxa) =>
                     taxa[taxaGroup.toLowerCase()] === taxaName &&
