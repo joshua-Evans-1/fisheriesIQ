@@ -1,0 +1,61 @@
+{
+  "name": "fisheries-client",
+  "version": "5.0.0",
+  "private": true,
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "dependencies": {
+    "@ag-grid-community/theming": "^32.3.2",
+    "@emotion/react": "^11.13.3",
+    "@emotion/styled": "^11.13.0",
+    "@fontsource/roboto": "^5.1.0",
+    "@mui/icons-material": "^6.1.4",
+    "@mui/material": "^6.1.4",
+    "@mui/styled-engine-sc": "^6.1.4",
+    "@mui/x-charts": "^7.22.2",
+    "@svgdotjs/svg.js": "^3.2.4",
+    "@tsparticles/all": "^3.5.0",
+    "@tsparticles/engine": "^3.5.0",
+    "@tsparticles/plugin-polygon-mask": "^3.5.0",
+    "@tsparticles/react": "^3.0.0",
+    "@types/react-sortable-tree": "^0.3.23",
+    "@xyflow/react": "^12.3.3",
+    "ag-grid-community": "^32.3.2",
+    "ag-grid-react": "^32.3.2",
+    "axios": "^1.7.7",
+    "d3-interpolate-path": "^2.3.0",
+    "dayjs": "^1.11.13",
+    "flubber": "^0.4.2",
+    "gsap": "^3.12.5",
+    "leaflet": "^1.9.4",
+    "markdown-to-jsx": "^7.5.0",
+    "react": "latest",
+    "react-d3-tree": "^3.6.2",
+    "react-data-table-component": "^7.6.2",
+    "react-dom": "latest",
+    "react-leaflet": "^4.2.1",
+    "react-parallax": "^3.5.1",
+    "react-router-dom": "^6.27.0",
+    "react-scripts": "latest",
+    "react-spring": "^9.7.4",
+    "react-tsparticles": "^2.12.2",
+    "styled-components": "^6.1.13",
+    "swiper": "^11.1.15"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
