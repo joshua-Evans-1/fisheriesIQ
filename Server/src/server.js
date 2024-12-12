@@ -2,6 +2,8 @@ import express from 'express';
 import bodyParser from 'body-parser';
 import cors from 'cors';
 import dotenv from 'dotenv';
+import path from 'path';
+import { fileURLToPath } from 'url'; // Required to define __dirname in ES module scope
 import {
   getSpecies,
   getLakes,
@@ -13,16 +15,29 @@ import {
   getLakeByID,
 } from './db.js';
 
-dotenv.config({ path: '../.env' });
+// Manually define __dirname
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+dotenv.config({ path: '../../WebClient/.env' });
 
 const app = express();
-const PORT = process.env.REACT_APP_STATUS === 'prod' ? process.env.REACT_APP_PROD_SERVER_PORT : process.env.REACT_APP_DEV_SERVER_PORT;
+const HOST = process.env.REACT_APP_DEV_SERVER_ADDRESS;
+const PORT = process.env.REACT_APP_STATUS === 'prod'
+  ? process.env.REACT_APP_PROD_SERVER_PORT
+  : process.env.REACT_APP_DEV_SERVER_PORT;
 
+// Middleware
 app.set('view engine', 'ejs');
-app.use(cors());
+app.use(cors({origin: '*',methods: ['GET', 'POST', 'PUT', 'DELETE'],}));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
+// Serve React build files
+const buildPath = path.resolve(__dirname, '../../WebClient/build');
+app.use(express.static(buildPath));
+
+// API routes
 app.get('/', async (req, res) => {
   res.send(await getSpecies());
 });
@@ -63,6 +78,12 @@ app.post('/fetchSpeciesTaxData', async (req, res) => {
   res.send(await fetchSpeciesTaxData(req.body));
 });
 
+// Catch-all route to serve React app
+app.get('*', (req, res) => {
+  res.sendFile(path.resolve(buildPath, 'index.html'));
+});
+
+// Start server
 app.listen(PORT, () => {
-  console.log(`Server running on ${PORT}`);
+  console.log(`Server running on http://${HOST}:${PORT}`);
 });

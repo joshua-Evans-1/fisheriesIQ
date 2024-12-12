@@ -189,29 +189,9 @@ const TaxaProfile = () => {
 
       {/* Taxa Details Table */}
       {!loading && !error && taxaDetails.length > 0 && (
-        <TableContainer component={Paper} sx={{ marginTop: 3 }}>
-          <Typography variant="h6" gutterBottom>
-            Taxa Details
-          </Typography>
-          <Table>
-            <TableHead>
-              <TableRow>
-                {Object.keys(taxaDetails[0]).map((key) => (
-                  <TableCell key={key}>{key}</TableCell>
-                ))}
-              </TableRow>
-            </TableHead>
-            <TableBody>
-              {taxaDetails.map((row, index) => (
-                <TableRow key={index}>
-                  {Object.values(row).map((value, idx) => (
-                    <TableCell key={idx}>{value}</TableCell>
-                  ))}
-                </TableRow>
-              ))}
-            </TableBody>
-          </Table>
-        </TableContainer>
+        <Typography variant="h6" gutterBottom>
+          UNDER MAINTAINANCE
+        </Typography>
       )}
     </Box>
   );

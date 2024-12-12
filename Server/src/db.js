@@ -3,11 +3,11 @@ import mysql from 'mysql2';
 import dotenv from 'dotenv';
 
 // Load environment variables
-dotenv.config({ path: '../.env' });
+dotenv.config({ path: '../WebClient/.env' });
 
 // Create database connection pool
 const pool = mysql.createPool({
-  host: process.env.REACT_APP_DB_HOST,
+  host: process.env.REACT_APP_DEV_SERVER_ADDRESS,
   user: process.env.REACT_APP_DB_USER,
   password: process.env.REACT_APP_DB_PASSWORD,
   database: process.env.REACT_APP_DB_NAME
